@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- THE NAVIGATION ELEMENT  -->
+    <nav id="navbar">
+        <header>CSS Documentation</header>
+        <ul>
+          <li><a class="nav-link" href="#Welcome">Welcome</a></li>
+          <li><a class="nav-link" href="#Box_Model">Box Model</a> </li>
+          <li><a class="nav-link" href="#Selectors">Selectors</a></li>
+          <li><a  class="nav-link" href="#Cascade">Cascade</a></li>
+          <li><a class="nav-link" href="#Inheritance">Inheritance</a></li>
+          <li><a class="nav-link" href="#Color">Color</a></li>
+          <li><a class="nav-link" href="#Sizing_Units">Sizing Units</a></li>
+        </ul>
+      </nav> 
+      <!-- THE MAIN ELEMENT  -->
+      <main id="main-doc" >
+            <!-- The welcome section  -->
+        <section class="main-section"  id="Welcome">
+            <header>Welcome</header>
+            <article>
+                <P> 
+    This course breaks down the fundamentals of CSS into digestible, easy to understand pieces. Over the next few modules, you'll learn how the core aspects of CSS work and how to use them effectively in your projects. Use the menu pane by the "Learn CSS" logo to navigate the modules.
+
+    You'll learn CSS fundamentals like the box model, cascade and specificity, flexbox, grid and z-index. And, along with these fundamentals, you'll learn about functions, color types, gradients, logical properties and inheritance to make you a well-rounded front-end developer, ready to take on any user interface.
+    
+    Each module is full of interactive demos and self-assessments for you to test your knowledge. In addition to learning through reading and demos, there is an accompanying podcast episode for each topic as another way to learn and continue expanding your knowledge.
+    
+    This course is created for beginner and advanced CSS developers alike. You can go through the series from start to finish to get a general understanding of CSS from top to bottom, or you can use it as a reference for specific styling subjects. For those new to web development overall, check out the intro to HTML course from MDN to learn all about how to write markup and link your stylesheets.
+                </P>
+            </article>
+          
+        </section>
+        <!-- The Box Model  section  -->
+         <section class="main-section" id="Box_Model" >
+            <header >Box Model</header>
+            <article>
+                <p>
+    In CSS, the term "box model" is used when talking about design and layout.
+    The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.<br>
+    Explanation of the different parts:
+    </p>
+    <ul>
+        <li>
+    Content - The content of the box, where text and images appear
+        </li>
+        <li>
+    Padding - Clears an area around the content. The padding is transparent
+        </li>
+        <li>
+    Border - A border that goes around the padding and content
+        </li>
+        <li>
+    Margin - Clears an area outside the border. The margin is transparent
+        </li>
+    </ul>
+    <p>
+    The box model allows us to add a border around elements, and to define space between elements. 
+                </p>
+                <code>
+                    div {
+                        width: 300px;
+                        border: 15px solid green;
+                        padding: 50px;
+                        margin: 20px;
+                      }
+                </code>
+    
+            </article>
+          
+        </section> 
+        <!-- The selectors section  -->
+        <section   class="main-section" id="Selectors" >
+            <header >Selectors</header>
+            <article>
+                <p>
+                    CSS selectors are used to "find" (or select) the HTML elements you want to style.
+                    </p>
+                    <p>
+                        We can divide CSS selectors into five categories:
+                    </p>
+    <ul>
+        <li>
+    Simple selectors (select elements based on name, id, class)
+        </li>
+        <li>
+            Combinator selectors (select elements based on a specific relationship between them)
+        </li>
+        <li>
+            Pseudo-class selectors (select elements based on a certain state)
+        </li>
+        <li>
+            Pseudo-elements selectors (select and style a part of an element)
+        </li>
+        <li>
+            Attribute selectors (select elements based on an attribute or attribute value)
+        </li>
+    </ul>
+    
+    <p>
+        This page will explain the most basic CSS selectors.
+    </p>
+    <h3>The CSS element Selector</h3>      
+    <p>
+        The element selector selects HTML elements based on the element name.
+    </p>      
+    <code>
+        p {
+            text-align: center;
+            color: red;
+          } 
+    </code>
+    <h3>The CSS id Selector</h3>
+    <p>
+        The id selector uses the id attribute of an HTML element to select a specific element.
+    
+    The id of an element is unique within a page, so the id selector is used to select one unique element!
+    
+    To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+    </p>
+    <code>
+        #para1 {
+            text-align: center;
+            color: red;
+          }
+    </code>
+    <h3>
+        The CSS class Selector
+    </h3>
+    <p>
+        The class selector selects HTML elements with a specific class attribute.<br>
+    To select elements with a specific class, write a period (.) character, followed by the class name.
+    </p>
+    <code>
+        .center {
+            text-align: center;
+            color: red;
+          }
+    </code>
+            </article>
+           
+        </section>
+         <section class="main-section" id="Cascade" >
+             <header >Cascade</header>
+             <article>
+                <p>
+                    CSS stands for Cascading Stylesheets. The cascade is the algorithm for solving conflicts where multiple CSS rules apply to an HTML element. It's the reason that the text of the button styled with the following CSS will be blue.
+                 </p>
+                 <code>
+                    button {
+                        color: red;
+                      }
+                      
+                      button {
+                        color: blue;
+                      }
+                 </code>
+                 <p>
+                   Understanding the cascade algorithm helps you understand how the browser resolves conflicts like this. </p>
+                   <p>
+                    The cascade algorithm is split into 4 distinct stages.
+                   </p>
+    <ul>
+        <li>
+            Position and order of appearance: the order of which your CSS rules appear
+        </li>
+        <li>
+            Specificity: an algorithm which determines which CSS selector has the strongest match
+        <li>
+            Origin: the order of when CSS appears and where it comes from, whether that is a browser style, CSS from a browser extension, or your authored CSS
+        </li>
+        <li>
+            Importance: some CSS rules are weighted more heavily than others, especially with the !important rule type
+        </li>
+    </ul>
+             </article>
+        
+           </section>
+             </p>
+           
+        </section>
+         <section class="main-section" id="Inheritance" >
+            <header  >Inheritance</header>
+            <article>
+                <p>
+                    Say you just wrote some CSS to make elements look like a button.
+                </p>
+                <code>
+                        .my-button {
+                            display: inline-block;
+                            padding: 1rem 2rem;
+                            text-decoration: none;
+                            background: pink;
+                            font: inherit;
+                            text-align: center;
+                          }
+                    </code>
+                   <p>
+                    You then add a link element to an article of content, with a class value of .my-button. However there's an issue, the text is not the color that you expected it to be. How did this happen?
+                    Some CSS properties inherit if you don't specify a value for them. In the case of this button, it inherited the color from this CSS: 
+                   </p>
+                   <code>
+                    article a {
+                        color: maroon;
+                      }
+                   </code>
+            </article>
+           
+        </section> 
+        <section class="main-section" id="Color" >
+            <header  >Color</header>
+            <article>
+                <p>
+                    Color is an important part of any website and in CSS there are many options for color types, functions and treatments.
+    How do you decide which color type to use? How do you make your colors semi-transparent? In this lesson, you're going to learn which options you have to help you make the right decisions for your project and team.
+    CSS has various different data types, such as strings and numbers. Color is one of these types and uses other types, such as numbers for its own definitions.
+                </p>
+                <code>
+                    h1 {
+                        color: #b71540;
+                      }
+                </code>
+            </article>
+            
+        </section> 
+        <section class="main-section"  id="Sizing_Units">
+            <header > Sizing Units</header>
+            <article>
+                <p>
+                    The web is a responsive medium, but sometimes you want to control its dimensions to improve the overall interface quality. A good example of this is limiting line lengths to improve readability. How would you do that in a flexible medium like the web?
+                </p>
+                <code>
+                    h1 {
+                        font-size: 3.5rem;
+                        line-height: 1.2;
+                        max-width: 15ch;
+                      }
+                      
+                      p {
+                        font-size: 1.25rem;
+                        max-width: 70ch;
+                      }
+                      
+                      
+                      /* Presentational styles */
+                      article {
+                        width: 100%;
+                      }
+                      
+                      article > * + * {
+                        margin-top: 1.25em;
+                      }
+                </code>
+                <p>
+                    For this case, you can use a ch unit, which is equal to the width of a "0" character in the rendered font at its computed size. This unit allows you to limit the width of text with a unit that's designed to size text, which in turn, allows predictable control regardless of the size of that text. The ch unit is one of a handful of units that are helpful for specific contexts like this example.
+                </p>
+            </article>
+           
+        </section> 
+    
+        </main>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
